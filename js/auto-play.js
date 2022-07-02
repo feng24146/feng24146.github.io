@@ -39,4 +39,5 @@ try {
     }
 } catch (e) {
   console.log('!Your browser does not support AudioContext');
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 }
