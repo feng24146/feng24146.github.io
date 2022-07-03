@@ -40,23 +40,11 @@ try {
 } catch (e) {
   console.log('!Your browser does not support AudioContext');
 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-<audio autoplay="autopaly" loop="loop" controls="controls" id="audios">
-    <source src="music/bg.mp3" type="audio/mp3" />
-</audio>
-var music = document.getElementById('video');
-	  var state = 0;
-      document.addEventListener('touchstart', function(){    
-          if(state==0){        
-              music.play();        
-              state=1;    
-          }
-      }, false);
-      document.addEventListener("WeixinJSBridgeReady", function () {    
-          music.play();
-      }, false);
-      //循环播放
-      music.onended = function () {    
-          music.load();    
-          music.play();
-      }
+WeixinJSBridgeReady事件
+
+document.addEventListener('WeixinJSBridgeReady', function() {
+
+document.getElementById('audios').play()
+
+})
 }
