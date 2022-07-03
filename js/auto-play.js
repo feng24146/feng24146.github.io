@@ -40,4 +40,32 @@ try {
 } catch (e) {
   console.log('!Your browser does not support AudioContext');
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+        function autoPlayVideo(){
+            wx.config({
+                debug:false,
+                appId:"",
+                timestamp:1,
+                nonceStr:"",
+                signature:"",
+                jsApiList:[]
+            });
+            wx.ready(function(){
+                var autoplayVideo=document.getElementById("audio");
+                autoplayVideo.play()
+   })
+   };
+        autoPlayVideo();
+</script>
+
+<audio autoplay="autopaly" loop="loop" id="audios">
+    <source src="music/bg.mp3" type="audio/mp3" />
+</audio>
+ 
+<script>
+// 这里使用了微信自带的WeixinJSBridgeReady事件
+document.addEventListener('WeixinJSBridgeReady', function() {
+    document.getElementById('audios').play()
+})
+</script>
 }
