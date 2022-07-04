@@ -40,11 +40,22 @@ try {
 } catch (e) {
   console.log('!Your browser does not support AudioContext');
 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-WeixinJSBridgeReady事件
-
-document.addEventListener('WeixinJSBridgeReady', function() {
-
-document.getElementById('audios').play()
-
-})
+function audioAutoPlay(id) {
+let audio = document.getElementById(id);
+// 并不一定非要用ID获取，class值获取也可以
+audio.play();
+// 为了保险起见 这里页也手动调用一下
+audio.loop = true;
+// 如上 为了音乐能够循环播放
+document.addEventListener("WeixinJSBridgeReady", function () {
+audio.play();
+audio.loop = true;
+}, false);
+document.addEventListener('YixinJSBridgeReady', function () {
+// 暂时还不知道Yixin是什么东西...
+audio.play();
+audio.loop = true;
+}, false);
+}
+audioAutoPlay(id);
 }
